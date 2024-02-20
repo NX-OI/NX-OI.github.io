@@ -1,3 +1,4 @@
+/*背景防滚动*/
 .wobuxiangyaogundong{
 	background-image: url(../image/background.jpg);
 	background-size:100%;
@@ -12,20 +13,24 @@
 	left: 0; 
 	top: 0;
 }
+/*通用设置*/
 *{
 	-webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 	font-family: '华文细黑';
 	user-select: text;
 }
+/*大标题*/
 h1,h2,h3,h4,h5,h6{
 	color: black;
 	padding: 10px 15px 15px 15px;
 	box-sizing: border-box;
 }
+/*小标题*/
 h4,h5,h6{
 	padding: 25px;
 }
+/*选中的文本样式*/
 ::-moz-selection {
     backdrop-filter: blur(20px);
 	background: #00000030;
@@ -36,6 +41,7 @@ h4,h5,h6{
 	background: #00000030;
 	border-radius: 8px;
 }
+/*段落*/
 p,marquee,ul,ol{
 	background-color: #FFFFFF95;
 	color: black;
@@ -44,6 +50,7 @@ p,marquee,ul,ol{
 	padding: 20px;
 	box-sizing: border-box;
 }
+/*对自己说一声marquee慎用*/
 marquee{
 	hspace:20px;
 }
@@ -53,6 +60,7 @@ li{
 a{
 	user-select:none;
 	cursor: pointer;
+	vertical-align：middle;
 }
 a:link{
 	color:black;
@@ -75,7 +83,7 @@ button {
     background-color: azure;
     border: none;
     color: black;
-    padding: 8px 32px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -89,7 +97,6 @@ button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 20px 50px 0 rgba(0,0,0,0.19);
 }
 input {
-	width: 600px;
 	border: none;
 	padding: 15px;
 	border-bottom: 1px solid black;
@@ -116,7 +123,7 @@ input:hover
 button img{
 	border-radius: 8px;
 }
-
+/*顶栏设计*/
 #top-bar{
 	background-color: #FFFFFF80;
 	backdrop-filter: blur(8px);
@@ -125,12 +132,13 @@ button img{
 	align-items:center;
 	box-sizing: border-box;
 	z-index:999;
+	display: flex;
+	display: -webkit-flex; /* 为了Safari走钢索 */
+	/*接下来进行弹性布局flex的设计*/
+	align-items: center;
 }
 #top-bar a img{
-	width: 50px;
-	height: 50px;
 	float: left;
-	transform: translateY(-50%);
 }
 #top-bar a{
 	text-decoration: none;
@@ -141,7 +149,6 @@ button img{
     transition-duration: 0.4s;
 	margin-left: 0px;
 	color:#000000;
-	transform: translateY(50%);
 	padding: 0px;
 	background-color: #00000000;
 	box-sizing: border-box;
@@ -168,6 +175,18 @@ footer{
 	margin-right:8px;
 	position:fixed;
 }
+.search{
+	display: inline-block;
+	background-size: 20px;
+	background-repeat:no-repeat;
+	background-position: calc(100% - 15px);
+	background-image: url("../image/search.png");
+	flex-grow: 1;
+}
+.search_link img{
+	width: 20px;
+	height: 20px;
+}
 .links a{
 	margin-left: 10px;
 	margin-right: 10px;
@@ -178,162 +197,20 @@ footer{
 .links svg{
 	height: 20px;
 }
-@media screen and (max-height:468px) and (min-width:880px)
-{
-	#sb{
-		writing-mode: vertical-rl;
-		height: 65%;
+@media screen and (min-device-width: 150px){
+	.search{
+		display: inline-block;
 	}
-	#top-bar{
-		height: 30%;
-	}
-	.gooo{
-		position:relative;
-		writing-mode: vertical-rl;
-	}
-	#para{
-		writing-mode: vertical-rl;
-		margin-right: 8px;
+	.search_link{
+		display: none;
 	}
 }
-@media screen and (max-width:1000px)
-{
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 30px;
+@media screen and (max-device-width: 150px){
+	.search{
+		display: none;
 	}
-}
-@media screen and (max-width:880px)
-{
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 30px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
-	}
-}
-@media screen and (max-width:550px)
-{
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 30px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
-	}
-}
-@media screen and (max-width:542px)
-{
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 30px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
-	}
-}
-@media screen and (max-width:523px)
-{
-	#top-bar{
-		padding: 8px 5%;
-	}
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 30px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
-	}
-}
-@media screen and (max-width:360px)
-{
-	#top-bar{
-		padding: 8px 5%;
-	}
-	#top-bar a{
-		margin-right: 20px;
-	}
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 20px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
-	}
-}
-@media screen and (max-width:326px)
-{
-	#top-bar{
-		padding: 8px 5%;
-	}
-	#top-bar a{
-		margin-right: 15px;
-	}
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 15px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
-	}
-}
-@media screen and (max-width:301px)
-{
-	#top-bar{
-		padding: 8px 5%;
-	}
-	#top-bar a{
-		margin-right: 10px;
-	}
-	#top-bar a:hover{
-		margin-left: 0px;
-		margin-right: 10px;
-	}
-	.show{
-		width:100%;
-		float:none;
-	}
-	.gooo{
-		width:100%;
-		float:none;
-		position:relative;
+	.search_link{
+		display: inline;
 	}
 }
 @media (prefers-color-scheme: dark)
